@@ -1,6 +1,12 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from "vue";
+import App from "./App.vue";
+import router from "./router";
 
-import BitComp from '../packages';
+import "./assets/markdown.css";
 
-createApp(App).use(BitComp).mount('#app')
+import BitComp from "../packages";
+import Preview from "./components/Preview.vue";
+
+const app = createApp(App);
+app.component("Preview", Preview);
+app.use(BitComp).use(router).mount("#app");

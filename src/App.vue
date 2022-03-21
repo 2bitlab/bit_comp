@@ -1,21 +1,51 @@
-<script setup lang="ts">
-// This starter template is using Vue 3 <script setup> SFCs
-// Check out https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup
-</script>
-
 <template>
-  <img alt="Vue logo" src="./assets/logo.png" />
-
-  <bit-button>我是自定义按钮</bit-button>
+  <div class="comp-doc">
+    <aside>
+      <router-link
+        v-for="(link, index) in data.links"
+        :key="index"
+        :to="link.path"
+        >{{ link.name }}</router-link
+      >
+    </aside>
+    <main>
+      <router-view></router-view>
+    </main>
+  </div>
 </template>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+<script setup>
+import ComponentList from "packages/list.json";
+import { reactive } from "vue";
+
+const data = reactive({
+  links: ComponentList.map((item) => ({
+    path: `/components/${item.compName}`,
+    name: item.compZhName,
+  })),
+});
+</script>
+
+<style lang="less">
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+.comp-doc {
+  display: flex;
+  min-height: 100vh;
+  aside {
+    width: 200px;
+    padding: 15px;
+    border-right: 1px solid #ccc;
+    display: flex;
+    flex-direction: column;
+  }
+  main {
+    width: 100%;
+    flex: 1;
+    padding: 15px;
+  }
 }
 </style>
