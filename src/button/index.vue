@@ -5,10 +5,13 @@
 </template>
 
 <script lang="ts">
-import { defineComponent } from 'vue-demi';
+import { defineComponent, isVue2, isVue3 } from 'vue-demi';
 
 export default defineComponent({
+  name: 'Button',
   setup() {
+    console.log('Button isVue2', isVue2);
+    console.log('Button isVue3', isVue3);
     return {};
   },
 });
