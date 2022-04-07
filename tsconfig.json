@@ -20,7 +20,7 @@
     "declarationDir": "dist",
     "skipLibCheck": true,
     "jsx": "preserve",
-    "lib": ["esnext", "dom"],
+    "lib": ["esnext", "dom", "dom.iterable", "scripthost"],
     "types": ["jest", "node"],
     "rootDir": ".",
     "paths": {
@@ -28,6 +28,6 @@
       "bit_comp": ["src/"]
     }
   },
-  "include": ["src"],
+  "include": ["src/**/*.ts", "src/**/*.vue"],
   "exclude": ["node_modules", "dist"]
 }

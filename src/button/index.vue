@@ -5,11 +5,13 @@
 </template>
 
 <script lang="ts">
-export default {
+import { defineComponent } from 'vue-demi';
+
+export default defineComponent({
   setup() {
     return {};
   },
-};
+});
 </script>
 
 <style scoped>

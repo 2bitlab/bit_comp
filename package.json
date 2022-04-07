@@ -39,7 +39,7 @@
     "@vitejs/plugin-vue-jsx": "^1.1.7",
     "@vue/eslint-config-prettier": "^6.0.0",
     "@vue/eslint-config-typescript": "^7.0.0",
-    "@vue/test-utils": "^2.0.0-beta.10",
+    "@vue/test-utils": "^2.0.0-rc.19",
     "@vuedx/typescript-plugin-vue": "^0.6.3",
     "babel-jest": "^26.6.3",
     "conventional-changelog-cli": "^2.1.1",
@@ -78,6 +78,21 @@
   "husky": {
     "hooks": {
       "pre-commit": "pretty-quick --staged"
+    }
+  },
+  "dependencies": {
+    "vue-demi": "^0.12.5"
+  },
+  "peerDependencies": {
+    "@vue/composition-api": "^1.1.0",
+    "vue": "^2.6.0 || ^3.2.0"
+  },
+  "peerDependenciesMeta": {
+    "vue": {
+      "optional": true
+    },
+    "@vue/composition-api": {
+      "optional": true
     }
   }
 }
