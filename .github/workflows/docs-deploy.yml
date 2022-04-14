@@ -35,5 +35,8 @@ jobs:
         run: pnpm build
       - name: Docs build
         run: pnpm docs-build
-      - name: Docs deploy
-        run: pnpm docs-deploy
+      - name: Docs Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.ACCESS_TOKEN }}
+          publish_dir: ./docs/dist
