@@ -31,5 +31,9 @@ jobs:
         run: pnpm ls-lint
       - name: Test
         run: pnpm test
+      - name: Build
+        run: pnpm build
+      - name: Docs build
+        run: pnpm docs-build
       - name: Docs deploy
         run: pnpm docs-deploy
