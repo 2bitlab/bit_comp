@@ -1,29 +1,71 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-restricted-globals */
+
+// const { resolve } = require('path')
+const DOMGlobals = ['window', 'document']
+const NodeGlobals = ['module', 'require']
+
 module.exports = {
   root: true,
   env: {
     browser: true,
-    jest: true,
+    es6: true,
     node: true,
+    'vue/setup-compiler-macros': true
   },
   extends: [
-    'plugin:vue/essential',
-    'eslint:recommended',
-    '@vue/prettier',
-    '@vue/typescript/recommended',
-    '@vue/prettier/@typescript-eslint',
+    'plugin:markdown/recommended',
+    'plugin:json/recommended',
+    'plugin:vue/vue3-recommended',
+    'plugin:@typescript-eslint/recommended',
+    'prettier'
   ],
+  parser: 'vue-eslint-parser',
   parserOptions: {
-    ecmaVersion: 2020,
+    parser: '@typescript-eslint/parser',
+    ecmaVersion: 'latest',
+    sourceType: 'module',
+    vueFeatures: {
+      filter: true,
+      interpolationAsNonHTML: false
+    }
   },
+  plugins: ['vue', 'prettier', '@typescript-eslint'],
   rules: {
-    '@typescript-eslint/explicit-module-boundary-types': 'off',
+    'no-unused-vars': [
+      'error',
+      // we are only using this rule to check for unused arguments since TS
+      // catches unused variables but not args.
+      { varsIgnorePattern: '.*', args: 'none' }
+    ],
+    // most of the codebase are expected to be env agnostic
+    'no-restricted-globals': ['error', ...DOMGlobals, ...NodeGlobals],
+    // since we target ES2015 for baseline support, we need to forbid object
+    // rest spread usage (both assign and destructure)
+    'no-restricted-syntax': ['error', 'ObjectPattern > RestElement'],
+    'no-restricted-imports': [
+      'error',
+      {
+        paths: [
+          'vue',
+          '@vue/composition-api',
+          '..',
+          '../..',
+          // resolve(__dirname, 'packages/core/index.ts'),
+          {
+            name: 'vue-demi',
+            importNames: ['onMounted', 'onUnmounted'],
+            message: 'Use tryOnMounted and tryOnScopeDispose instead.'
+          }
+        ]
+      }
+    ]
   },
-  overrides: [
-    {
-      files: ['**/__tests__/*.{j,t}s?(x)', '**/dist/**', 'docs/*'],
-      env: {
-        jest: true,
-      },
-    },
-  ],
-};
+  ignorePatterns: [
+    'node_modules/',
+    'dist/',
+    'coverage/',
+    'pnpm-lock.yaml',
+    'scripts/'
+  ]
+}
