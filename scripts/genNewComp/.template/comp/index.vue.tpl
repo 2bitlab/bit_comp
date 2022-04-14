@@ -1,6 +1,6 @@
 <template>
   <div class="btp-{{ compClassName }}">
-    <slot></slot>
+    {{ compZhName }}: {{compDesc}}
   </div>
 </template>
 
