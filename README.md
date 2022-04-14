@@ -5,20 +5,20 @@ build with [vitepress-for-component](https://github.com/dewfall123/vitepress-for
 ## Start up
 
 ```bash
-yarn
-yarn dev
+pnpm
+pnpm dev
 
-yarn test # 跑测试
+pnpm test # 跑测试
 
 
-yarn build
+pnpm build
 
-yarn release # 发布到npm
+pnpm release # 发布到npm
 
-yarn docs-build-serve # 文档系统的构建和web服务
-yarn docs-build-deploy # 文档系统的构建和发布到github page
+pnpm docs-build-serve # 文档系统的构建和web服务
+pnpm docs-build-deploy # 文档系统的构建和发布到github page
 
-yarn changelog # 生成changelog
+pnpm changelog # 生成changelog
 ```
 
 ## Todo List

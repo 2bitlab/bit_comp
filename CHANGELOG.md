@@ -13,7 +13,7 @@
 - bump vitepress-for-component ([ea4a22e](https://github.com/dewfall123/vue-lib-template/commit/ea4a22e041759b9d7ee6b551617e272f91b10d53))
 - support gh-pages ([35e620f](https://github.com/dewfall123/vue-lib-template/commit/35e620fd270971de448713347424bf721db362f9))
 - support locale lint build and more ([f0190fa](https://github.com/dewfall123/vue-lib-template/commit/f0190fa12792858c4d937a040c8a47dd1111be1f))
-- use vvitepress-for-component ([1dbe51a](https://github.com/dewfall123/vue-lib-template/commit/1dbe51aec173842dd0913212370d1285ceddb383))
+- use vitepress-for-component ([1dbe51a](https://github.com/dewfall123/vue-lib-template/commit/1dbe51aec173842dd0913212370d1285ceddb383))
 
 ## 0.0.1 (2020-11-19)
 

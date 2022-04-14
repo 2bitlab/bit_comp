@@ -11,23 +11,24 @@
 </template>
 
 <script lang="ts">
-import { Button } from 'bit_comp';
-import { ref } from 'vue';
+import { Button } from 'bit_comp'
+import { ref } from 'vue-demi'
 
 export default {
+  name: 'ButtonBaseDemo',
   components: {
-    Button,
+    Button
   },
   setup() {
-    const count = ref(0);
+    const count = ref(0)
     function onClick() {
-      count.value++;
+      count.value++
     }
 
     return {
       count,
-      onClick,
-    };
-  },
-};
+      onClick
+    }
+  }
+}
 </script>
