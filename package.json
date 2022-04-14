@@ -32,7 +32,6 @@
     "format": "prettier --write ./**/*.{vue,ts,tsx,js,jsx,css,less,scss,json,md}",
     "ls-lint": "ls-lint",
     "release": "np",
-    "prepare": "husky install",
     "gen": "node ./scripts/genNewComp/index.js"
   },
   "devDependencies": {
@@ -85,6 +84,11 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "lint-staged": {
     "*.{js,vue,ts,jsx,tsx}": [
