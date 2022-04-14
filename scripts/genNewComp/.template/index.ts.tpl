@@ -1,12 +1,12 @@
-import { App, Plugin } from 'vue';
-import {{ compName }} from './src/index.vue';
 
-export const {{ compName }}Plugin: Plugin = {
-  install(app: App) {
-    app.component('btp-{{ compClassName }}', {{ compName }});
-  },
-};
+/**
+ * !--------- FBI WARNING ----------!
+ *
+ * 根据 /src 目录下的组件所生成的模块导出，请勿手动修改
+ */
+
+{{importPlugins}}
 
 export {
-  {{ compName }},
+  {{ exportPlugins }}
 };

@@ -1,5 +1,7 @@
-const base = process.env.NODE_ENV === 'production' ? '/bit_comp' : '/';
-const { resolve } = require('path');
+const base = process.env.NODE_ENV === 'production' ? '/bit_comp' : '/'
+const { resolve } = require('path')
+
+const compList = require('./list.json')
 
 module.exports = {
   title: 'bit_comp',
@@ -8,7 +10,7 @@ module.exports = {
   srcIncludes: ['src'],
   alias: {
     // 为了能在demo中正确的使用  import { X } from 'bit_comp'
-    [`bit_comp`]: resolve('./src'),
+    [`bit_comp`]: resolve('./src')
   },
   base,
   head: [['link', { rel: 'icon', type: 'image/svg+xml', href: '/logo.svg' }]],
@@ -24,13 +26,16 @@ module.exports = {
         selectText: '语言',
         nav: [
           { text: '介绍', link: '/' },
-          { text: '组件', link: '/components/' },
+          { text: '组件', link: '/components/' }
         ],
         sidebar: [
           { text: '开始', link: '/components/' },
-          { text: 'Button', link: '/components/button/' },
+          ...compList.map(({ compName }) => ({
+            text: compName,
+            link: `/components/${compName}/`
+          }))
         ],
-        editLinkText: '欢迎帮助我们改善页面!',
+        editLinkText: '欢迎帮助我们改善页面!'
       },
       '/en/': {
         lang: 'en-US',
@@ -40,17 +45,20 @@ module.exports = {
         selectText: 'Languages',
         nav: [
           { text: 'Guide', link: '/en/' },
-          { text: 'Components', link: '/en/components/' },
+          { text: 'Components', link: '/en/components/' }
         ],
         sidebar: [
           { text: 'Start up', link: '/en/components/' },
-          { text: 'Button', link: '/en/components/button/' },
+          ...compList.map(({ compName }) => ({
+            text: compName,
+            link: `/en/components/${compName}/`
+          }))
         ],
-        editLinkText: 'Edit this page!',
-      },
+        editLinkText: 'Edit this page!'
+      }
     },
     search: {
-      searchMaxSuggestions: 10,
+      searchMaxSuggestions: 10
     },
     repo: '2bitlab/bit_comp',
     repoLabel: 'Github',
@@ -59,6 +67,6 @@ module.exports = {
     nextLink: true,
     docsDir: 'docs',
     docsBranch: 'master',
-    editLinks: true,
-  },
-};
+    editLinks: true
+  }
+}

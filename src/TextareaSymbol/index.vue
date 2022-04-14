@@ -1,14 +1,14 @@
 <template>
-  <button class="button">
+  <div class="btp-textarea-symbol">
     <slot></slot>
-  </button>
+  </div>
 </template>
 
 <script lang="ts">
 import { defineComponent, isVue2, isVue3 } from 'vue-demi'
 
 export default defineComponent({
-  name: 'TestButton',
+  name: 'TextareaSymbol',
   setup() {
     console.log('Button isVue2', isVue2)
     console.log('Button isVue3', isVue3)
@@ -18,7 +18,6 @@ export default defineComponent({
 </script>
 
 <style scoped>
-.button {
-  padding: 6px 24px;
+.btp-textarea-symbol {
 }
 </style>
