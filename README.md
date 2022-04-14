@@ -1,3 +1,5 @@
+[![Unit Test](https://github.com/2bitlab/bit_comp/actions/workflows/test.yml/badge.svg?branch=master)](https://github.com/2bitlab/bit_comp/actions/workflows/test.yml)
+
 # bit_comp
 
 build with [vitepress-for-component](https://github.com/dewfall123/vitepress-for-component)
