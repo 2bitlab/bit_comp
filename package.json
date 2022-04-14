@@ -1,6 +1,6 @@
 {
   "name": "bit_comp",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "",
   "main": "./dist/bit_comp.umd.js",
   "module": "./dist/bit_comp.es.js",
